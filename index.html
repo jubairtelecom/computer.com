@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>জুবাইর টেলিকম & কম্পিউটার</title>
+<meta name="description" content="চার্জার, ক্যাবল, ইয়ারফোনসহ মোবাইল অ্যাক্সেসরিজ। WhatsApp-এ অর্ডার করুন।">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D91E2A;--navy:#13265C;--bg:#F6F7FB;--card:#fff;--ink:#14213D;--mute:#5B6478;--line:#E1E5EF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+header{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;border-bottom:4px solid var(--red)}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px;padding:8px 14px}
+.bar img{width:46px;height:46px;border-radius:50%;background:#fff}
+.bar h1{font-size:1.05rem;margin:0;line-height:1.2;flex:1;font-weight:700}
+.cartbtn{position:relative;background:var(--red);color:#fff;border:0;border-radius:10px;padding:9px 14px;font:600 .95rem "Hind Siliguri",sans-serif;cursor:pointer}
+.cartbtn b{background:#fff;color:var(--red);border-radius:99px;padding:0 7px;margin-left:6px;font-size:.85rem}
+.hero{background:var(--navy);color:#fff;padding:26px 14px 30px}
+.hero div{max-width:1100px;margin:auto}
+.hero h2{font-size:1.6rem;margin:0 0 6px;line-height:1.25}
+.hero p{margin:0 0 14px;color:#C9D1EA;max-width:34rem}
+.hero a{display:inline-block;background:#25D366;color:#06260F;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:10px}
+main{max-width:1100px;margin:auto;padding:16px 14px 90px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px}
+.chip{flex:none;border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:99px;padding:6px 16px;font:600 .95rem "Hind Siliguri",sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--navy);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card .ph{aspect-ratio:1;background:#fff;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+.card img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.card .in{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{font-size:.95rem;margin:0;line-height:1.3}
+.card p{font-size:.82rem;color:var(--mute);margin:0;flex:1}
+.price{font-size:1.2rem;font-weight:700;color:var(--red)}
+.add{border:0;background:var(--navy);color:#fff;border-radius:9px;padding:9px;font:600 .95rem "Hind Siliguri",sans-serif;cursor:pointer;margin-top:4px}
+.add:active{background:var(--red)}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+#drawer{position:fixed;inset:0;z-index:40;display:none}
+#drawer.open{display:block}
+#drawer .bk{position:absolute;inset:0;background:rgba(10,16,40,.55)}
+#drawer .pn{position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:#fff;display:flex;flex-direction:column;box-shadow:-6px 0 24px rgba(0,0,0,.2)}
+.pn header{position:static;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border:0;border-bottom:4px solid var(--red)}
+.pn header h2{margin:0;font-size:1.1rem}
+.x{background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1}
+.items{flex:1;overflow:auto;padding:8px 14px}
+.row{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.row img{width:54px;height:54px;object-fit:contain;border:1px solid var(--line);border-radius:8px}
+.row .t{flex:1;font-size:.9rem;line-height:1.3}
+.row .t small{color:var(--mute);display:block}
+.q{display:flex;align-items:center;gap:6px}
+.q button{width:30px;height:30px;border-radius:8px;border:1px solid var(--navy);background:#fff;font-size:1.1rem;cursor:pointer;color:var(--navy)}
+.empty{text-align:center;color:var(--mute);padding:40px 10px}
+.foot{padding:12px 14px;border-top:1px solid var(--line);display:grid;gap:8px}
+.foot input,.foot textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;font:inherit}
+.tot{display:flex;justify-content:space-between;font-weight:700;font-size:1.1rem}
+.send{background:#25D366;color:#06260F;border:0;border-radius:10px;padding:12px;font:700 1rem "Hind Siliguri",sans-serif;cursor:pointer}
+.send:disabled{opacity:.5;cursor:not-allowed}
+.note{font-size:.8rem;color:var(--mute);margin:0}
+footer{background:var(--navy);color:#C9D1EA;text-align:center;padding:20px 14px;font-size:.9rem;border-top:4px solid var(--red)}
+footer a{color:#fff;font-weight:600}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
+#lb.open{display:flex}
+#lb img{max-width:100%;max-height:100%;background:#fff;border-radius:8px}
+#q{width:100%;padding:11px 14px;border:1.5px solid var(--navy);border-radius:10px;font:inherit;margin-bottom:10px;background:#fff}
+.fl{display:block;text-align:center;padding:11px;border:2px dashed var(--navy);border-radius:10px;color:var(--navy);font-weight:600;cursor:pointer}
+.ph img{padding:6px}
+.bn{background:linear-gradient(135deg,#13265C,#1B3A8A 60%,#13265C);color:#fff;position:relative;overflow:hidden}
+.bn::before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;border:30px solid var(--red)}
+.bn .w{max-width:1100px;margin:auto;padding:22px 14px 28px;display:grid;gap:22px;position:relative;z-index:1}
+@media(min-width:800px){.bn .w{grid-template-columns:1.1fr .9fr;align-items:center;padding:38px 14px}}
+.bn .lg{width:88px;height:88px;border-radius:50%;background:#fff;padding:3px;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+.bn h2{font-size:1.75rem;margin:10px 0 6px;line-height:1.25}
+.bn p{color:#D3DAF0;margin:0 0 8px;max-width:32rem}.bn .ad{color:#fff;font-weight:600;font-size:.95rem}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.btns a{text-decoration:none;font-weight:700;padding:11px 18px;border-radius:10px}
+.b1{background:var(--red);color:#fff}.b2{background:#25D366;color:#06260F}
+.tiles{display:flex;gap:12px;justify-content:center;padding:6px 4px}
+.tiles div{flex:1;max-width:150px;aspect-ratio:1;background:#fff;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.3);overflow:hidden}
+.tiles div:nth-child(1){transform:rotate(-5deg)}.tiles div:nth-child(2){transform:translateY(-10px)}.tiles div:nth-child(3){transform:rotate(5deg)}
+.tiles img{width:100%;height:100%;object-fit:contain}
+.sec{font-size:1.25rem;margin:4px 0 12px;color:var(--navy);border-left:5px solid var(--red);padding-left:10px}
+.sv{max-width:1100px;margin:auto;padding:22px 14px 0}
+.sg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}@media(min-width:800px){.sg{grid-template-columns:repeat(4,1fr)}}
+.sc{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:12px;padding:14px 10px;text-align:center}
+.sc i{font-style:normal;display:flex;width:54px;height:54px;margin:0 auto 8px;align-items:center;justify-content:center;font-size:1.6rem;background:#EEF1FA;border-radius:50%}
+.sc h3{margin:0 0 3px;font-size:1rem;color:var(--navy)}.sc p{margin:0;font-size:.82rem;color:var(--mute);line-height:1.4}
+main{padding-top:22px}.ft{max-width:1100px;margin:auto}.ft h3{margin:0 0 6px;color:#fff;font-size:1.15rem}.ft p{margin:0 0 4px}
+.ft .wa{display:inline-block;margin-top:10px;background:#25D366;color:#06260F;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:10px}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <img src="logo.jpg" alt="জুবাইর টেলিকম & কম্পিউটার লোগো">
+  <h1>জুবাইর টেলিকম &amp; কম্পিউটার</h1>
+  <button class="cartbtn" id="openCart" aria-label="কার্ট খুলুন">কার্ট<b id="cnt">০</b></button>
+</div></header>
+
+<section class="bn"><div class="w">
+  <div>
+    <img class="lg" src="logo.jpg" alt="জুবাইর টেলিকম & কম্পিউটার লোগো">
+    <h2>জুবাইর টেলিকম &amp; কম্পিউটার</h2>
+    <p>মোবাইল অ্যাক্সেসরিজ, ফটোকপি, ছবি প্রিন্ট, অনলাইন সেবা আর মোবাইল সার্ভিসিং, সবই এক দোকানে।</p>
+    <p class="ad">📍 শামলাপুর বাজার, সৈকত রোড, বাহারছড়া, টেকনাফ, কক্সবাজার</p>
+    <div class="btns"><a class="b1" href="#products">পণ্য দেখুন</a><a class="b2" href="https://wa.me/8801825445265" target="_blank" rel="noopener">WhatsApp-এ যোগাযোগ</a></div>
+  </div>
+  <div class="tiles" aria-hidden="true"><div><img src="p4.jpg" alt=""></div><div><img src="p13.jpg" alt=""></div><div><img src="p16.jpg" alt=""></div></div>
+</div></section>
+<section class="sv"><h2 class="sec">আমাদের সেবাসমূহ</h2><div class="sg">
+  <div class="sc"><i aria-hidden="true">💻</i><h3>অনলাইনের কাজ</h3><p>অনলাইন সংক্রান্ত যাবতীয় কাজ</p></div>
+  <div class="sc"><i aria-hidden="true">📄</i><h3>ফটোকপি</h3><p>দ্রুত ও পরিষ্কার ফটোকপি</p></div>
+  <div class="sc"><i aria-hidden="true">🖼️</i><h3>ছবি প্রিন্ট</h3><p>ছবি প্রিন্টসহ আরও নানা প্রিন্টের কাজ</p></div>
+  <div class="sc"><i aria-hidden="true">🔧</i><h3>মোবাইল সার্ভিসিং</h3><p>মোবাইলের সফটওয়্যার ও হার্ডওয়্যার সমস্যার সমাধান</p></div>
+</div></section>
+
+<main id="products">
+  <h2 class="sec">আমাদের পণ্য</h2>
+    <input id="q" type="search" placeholder="পণ্য খুঁজুন (যেমন: চার্জার, স্পিকার)" aria-label="পণ্য খুঁজুন">
+  <div class="chips" id="chips" role="group" aria-label="ক্যাটাগরি"></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer><div class="ft"><h3>জুবাইর টেলিকম &amp; কম্পিউটার</h3>
+  <p>প্রোঃ কামরুল হায়াত তারেক</p>
+  <p>📍 শামলাপুর বাজার, সৈকত রোড, বাহারছড়া, টেকনাফ, কক্সবাজার</p>
+  <p>📞 <a href="tel:+8801825445265">০১৮২৫-৪৪৫২৬৫</a></p>
+  <a class="wa" href="https://wa.me/8801825445265" target="_blank" rel="noopener">WhatsApp-এ মেসেজ করুন</a></div></footer>
+
+<div id="drawer" role="dialog" aria-modal="true" aria-label="আপনার কার্ট">
+  <div class="bk" id="bk"></div>
+  <div class="pn">
+    <header><h2>আপনার কার্ট</h2><button class="x" id="closeCart" aria-label="বন্ধ করুন">×</button></header>
+    <div class="items" id="items"></div>
+    <div class="foot">
+      <div class="tot"><span>মোট</span><span id="total">৳০</span></div>
+      <input id="nm" placeholder="আপনার নাম" autocomplete="name">
+      <input id="ph" placeholder="মোবাইল নম্বর" inputmode="tel" autocomplete="tel">
+      <textarea id="ad" rows="2" placeholder="ডেলিভারির ঠিকানা"></textarea>
+      <button class="send" id="send" disabled>WhatsApp-এ অর্ডার পাঠান</button>
+      <p class="note">বাটন চাপলে WhatsApp খুলবে এবং অর্ডারের তালিকা লেখা অবস্থায় থাকবে। শুধু "Send" চাপুন।</p>
+    </div>
+  </div>
+</div>
+<div id="lb"><img alt=""></div>
+
+<script type="application/json" id="data">[{"id": 1, "cat": "চার্জার", "name": "Sonnai Powerix W15 ১৫W ফাস্ট চার্জার (Type-C)", "desc": "স্মার্ট চিপ ও সিকিউরিটি চার্জ প্রযুক্তি। ফ্রি টাইপ-সি ক্যাবল, ২৫০ দিনের ওয়ারেন্টি।", "price": 350, "img": "p1.jpg"}, {"id": 2, "cat": "চার্জার", "name": "MU Telecom MU-C02 ১৫W ফাস্ট চার্জার (Micro USB)", "desc": "৩.৮A ফাস্ট চার্জার, সার্কিট প্রোটেকশন। ১০০ সে.মি. ক্যাবলসহ, ৬ মাসের ওয়ারেন্টি।", "price": 350, "img": "p2.jpg"}, {"id": 3, "cat": "চার্জার", "name": "HTE Premium Q60 GaN ফাস্ট চার্জার (Type-C)", "desc": "১৮W-৬৫W সুপার প্রোটোকল, GaN প্রযুক্তি, ওভারচার্জিং প্রোটেকশন। টাইপ-সি ক্যাবলসহ।", "price": 500, "img": "p3.jpg"}, {"id": 4, "cat": "চার্জার", "name": "Halima ২৫W GaN ফাস্ট চার্জার (Type-C)", "desc": "GaN প্রযুক্তি, ইন্টেলিজেন্ট প্রোটেকশন, ফ্ল্যাশ চার্জিং। টাইপ-সি ক্যাবলসহ, ৬ মাসের ওয়ারেন্টি।", "price": 500, "img": "p4.jpg"}, {"id": 5, "cat": "চার্জার", "name": "SHAHI ST-14 ১৪W ফাস্ট চার্জার (Type-C)", "desc": "ইন্টেলিজেন্ট ফাস্ট চার্জিং ও সেফটি ইউএসবি আউটপুট। টাইপ-সি ক্যাবলসহ।", "price": 350, "img": "p5.jpg"}, {"id": 6, "cat": "চার্জার", "name": "Sonnai SB-11 স্মার্ট চার্জার (Micro USB)", "desc": "স্মার্ট চিপ ও সিকিউরিটি চার্জ। ক্যাবল যুক্ত, ৬ মাসের ওয়ারেন্টি।", "price": 180, "img": "p6.jpg"}, {"id": 7, "cat": "ক্যাবল", "name": "REMAX Platinum Pro ৩৩W ডেটা ক্যাবল (RC-155a)", "desc": "TPE মেটেরিয়াল ও মেটাল শেল, ১ মিটার, প্যাঁচমুক্ত ফ্ল্যাট ডিজাইন। Micro USB / Type-C।", "price": 100, "img": "p7.jpg"}, {"id": 8, "cat": "ক্যাবল", "name": "MS Tech MS-01 ৬০W ফাস্ট চার্জিং ডেটা ক্যাবল", "desc": "৬০W ফাস্ট চার্জিং ও হাই-স্পিড ডেটা সিঙ্ক। Type-C ও Micro ভ্যারিয়েন্ট।", "price": 120, "img": "p8.jpg"}, {"id": 9, "cat": "ক্যাবল", "name": "ANKEER PowerLine Select ফাস্ট চার্জিং ক্যাবল", "desc": "টেকসই ডিজাইন, হাই-স্পিড চার্জিং, ৩ ফুট (০.৯ মিটার)। Type-C ও Micro-USB।", "price": 100, "img": "p9.jpg"}, {"id": 10, "cat": "ইয়ারফোন", "name": "Oppo W-58 ইন-ইয়ার ইয়ারফোন", "desc": "মাইক্রোফোন ও কল রিসিভ/মিউট বাটনসহ। পরিষ্কার সাউন্ড, ৬ মাসের ওয়ারেন্টি।", "price": 100, "img": "p10.jpg"}, {"id": 11, "cat": "ইয়ারফোন", "name": "Samsung AKG Type-C ইয়ারফোন", "desc": "ইন-লাইন রিমোট কন্ট্রোলসহ টাইপ-সি ইয়ারফোন। পরিষ্কার সাউন্ড।", "price": 400, "img": "p11.jpg"}, {"id": 12, "cat": "ইয়ারফোন", "name": "HTE BL-04 ওয়্যারলেস নেকব্যান্ড ইয়ারফোন", "desc": "ব্লুটুথ ৫.০, ম্যাগনেটিক কানেক্ট, ঘামরোধী স্পোর্টস ডিজাইন, TF কার্ড সাপোর্ট।", "price": 800, "img": "p12.jpg"}, {"id": 13, "cat": "ওয়্যারলেস ইয়ারবাড", "name": "AirPods Pro ANC ওয়্যারলেস ইয়ারবাড", "desc": "অ্যাক্টিভ নয়েজ ক্যানসেলেশন (ANC), প্রক্সিমিটি সেন্সর, চার্জিং কেসসহ।", "price": 800, "img": "p13.jpg"}, {"id": 14, "cat": "ওয়্যারলেস ইয়ারবাড", "name": "Oraimo Airpods-Pro ওয়্যারলেস ইয়ারবাড", "desc": "আরামদায়ক ইন-ইয়ার ডিজাইন, পরিষ্কার সাউন্ড ও ভালো ব্যাটারি ব্যাকআপ।", "price": 500, "img": "p14.jpg"}, {"id": 15, "cat": "ওয়্যারলেস ইয়ারবাড", "name": "OnePlus Airpods-Pro ওয়্যারলেস ইয়ারবাড", "desc": "আকর্ষণীয় ডিজাইন, জোরালো বেস ও পরিষ্কার কলিং।", "price": 500, "img": "p15.jpg"}, {"id": 16, "cat": "স্পিকার", "name": "JBL M3 মিনি পোর্টেবল ব্লুটুথ স্পিকার", "desc": "ছোট ও মেটাল বডির ব্লুটুথ স্পিকার। ভালো বেস, সহজে বহনযোগ্য।", "price": 400, "img": "p16.jpg"}, {"id": 17, "cat": "স্পিকার", "name": "X-312 পোর্টেবল ওয়্যারলেস স্পিকার", "desc": "ঝুলানোর স্ট্র্যাপসহ ছোট ও হালকা ব্লুটুথ স্পিকার।", "price": 500, "img": "p17.jpg"}, {"id": 18, "cat": "স্পিকার", "name": "W15 পোর্টেবল ওয়্যারলেস স্পিকার", "desc": "বড় সাইজের ব্লুটুথ স্পিকার, হ্যান্ড স্ট্র্যাপসহ। জোরালো সাউন্ড।", "price": 700, "img": "p18.jpg"}, {"id": 19, "cat": "স্মার্টওয়াচ", "name": "Y80 Ultra স্মার্টওয়াচ (৮+১ স্ট্র্যাপ সেট)", "desc": "এইচডি ডিসপ্লে। ৮টি আলাদা স্ট্র্যাপ, প্রটেক্টিভ কেস ও ওয়্যারলেস চার্জার ফ্রি।", "price": 1500, "img": "p19.jpg"}, {"id": 20, "cat": "অন্যান্য", "name": "লেজার পয়েন্টার", "desc": "প্রেজেন্টেশন, অফিস মিটিং ও ক্লাসরুম লেকচারের জন্য।", "price": 900, "img": "p20.jpg"}]</script>
+<script>
+const WA = "8801825445265";
+// নতুন পণ্য যোগ করতে নিচের তালিকায় একটা লাইন যোগ করুন
+let PRODUCTS = JSON.parse(document.getElementById("data").textContent);
+const bn = n => Number(n).toLocaleString("bn-BD");
+const $ = id => document.getElementById(id);
+let cart = {}, filter = "সব", q = "";
+try { cart = JSON.parse(localStorage.getItem("zt_cart") || "{}"); } catch(e){}
+const save = () => { try { localStorage.setItem("zt_cart", JSON.stringify(cart)); } catch(e){} };
+
+function chips(){
+  const cats = ["সব", ...new Set(PRODUCTS.map(p=>p.cat))];
+  $("chips").innerHTML = cats.map(c=>`<button class="chip" aria-pressed="${c===filter}" data-c="${c}">${c}</button>`).join("");
+}
+function grid(){
+  $("grid").innerHTML = PRODUCTS.filter(p=>(filter==="সব"||p.cat===filter)&&(p.name+" "+p.desc+" "+p.cat).toLowerCase().includes(q)).map(p=>`
+   <article class="card">
+     <div class="ph"><img src="${p.img}" alt="${p.name}" loading="lazy" data-zoom="${p.img}"></div>
+     <div class="in"><h3>${p.name}</h3><p>${p.desc}</p>
+     <div class="price">৳${bn(p.price)}</div>
+     <button class="add" data-add="${p.id}">কার্টে রাখুন</button></div>
+   </article>`).join("");
+}
+$("q").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();grid();if(!$("grid").children.length)$("grid").innerHTML='<p class="empty" style="grid-column:1/-1">এই নামে কোনো পণ্য পাওয়া যায়নি।</p>';});
+function render(){
+  const ids = Object.keys(cart).filter(id=>PRODUCTS.some(p=>p.id==id));
+  const count = ids.reduce((s,id)=>s+cart[id],0);
+  const total = ids.reduce((s,id)=>s+cart[id]*PRODUCTS.find(p=>p.id==id).price,0);
+  $("cnt").textContent = bn(count);
+  $("total").textContent = "৳"+bn(total);
+  $("send").disabled = !count;
+  $("items").innerHTML = count ? ids.map(id=>{const p=PRODUCTS.find(p=>p.id==id);return `
+   <div class="row"><img src="${p.img}" alt=""><div class="t">${p.name}<small>৳${bn(p.price)} × ${bn(cart[id])} = ৳${bn(p.price*cart[id])}</small></div>
+   <div class="q"><button data-m="${id}" aria-label="কমান">−</button><b>${bn(cart[id])}</b><button data-p="${id}" aria-label="বাড়ান">+</button></div></div>`}).join("")
+   : `<div class="empty">কার্ট খালি। পছন্দের পণ্য "কার্টে রাখুন" চাপুন।</div>`;
+  save();
+}
+document.addEventListener("click", e=>{
+  const t = e.target;
+  if(t.dataset.c){filter=t.dataset.c;chips();grid();}
+  if(t.dataset.add){cart[t.dataset.add]=(cart[t.dataset.add]||0)+1;render();t.textContent="যোগ হয়েছে ✓";setTimeout(()=>t.textContent="কার্টে রাখুন",900);}
+  if(t.dataset.p){cart[t.dataset.p]++;render();}
+  if(t.dataset.m){if(--cart[t.dataset.m]<=0)delete cart[t.dataset.m];render();}
+  if(t.dataset.zoom){$("lb").querySelector("img").src=t.dataset.zoom;$("lb").classList.add("open");}
+  if(t.id==="lb"||t.closest("#lb")){$("lb").classList.remove("open");}
+});
+$("openCart").onclick = ()=>$("drawer").classList.add("open");
+$("closeCart").onclick = $("bk").onclick = ()=>$("drawer").classList.remove("open");
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){$("drawer").classList.remove("open");$("lb").classList.remove("open");}});
+$("send").onclick = ()=>{
+  let total=0, lines=[];
+  Object.keys(cart).forEach(id=>{const p=PRODUCTS.find(p=>p.id==id); if(!p)return; const s=p.price*cart[id]; total+=s; lines.push(`• ${p.name} × ${bn(cart[id])} = ৳${bn(s)}`);});
+  const msg = `আসসালামু আলাইকুম, আমি অর্ডার করতে চাই:\n\n${lines.join("\n")}\n\nমোট: ৳${bn(total)}\n\nনাম: ${$("nm").value||"-"}\nমোবাইল: ${$("ph").value||"-"}\nঠিকানা: ${$("ad").value||"-"}`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
+};
+
+chips(); grid(); render();
+</script>
+</body>
+</html>
